@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores Base */
+  --color-aramar-base-light: #F2F2F2;
+  --color-aramar-base-dark: #262626;
+  
+  /* Colores Corporativos */
+  --color-aramar-corp-1: #7D818C;
+  --color-aramar-corp-2: #434D59;
+  --color-aramar-corp-3: #203140;
+  
+  /* Colores Dev */
+  --color-aramar-dev-1: #4E458C;
+  --color-aramar-dev-2: #494373;
+  --color-aramar-dev-3: #403C59;
+  
+  /* Colores Stats */
+  --color-aramar-stats-1: #26A682;
+  --color-aramar-stats-2: #278C70;
+  --color-aramar-stats-3: #3C735F;
+
+  /* Tipografías */
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: "Century Gothic", sans-serif;
+}
