@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "aramar-cache"
-  }
+  },
+  "targets": {
+    "aramar-cache": {
+      "hosting": {
+        "dev": [
+          "aramar-dev"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

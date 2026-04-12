@@ -3,7 +3,7 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center min-h-screen p-8">
       {/* Usamos Century Gothic y tu color base */}
       <h1 className="font-display text-5xl font-bold mb-2">
-        Aramar<span className="text-[var(--color-aramar-dev-1)]">.dev</span>
+        aramar<span className="text-[var(--color-aramar-dev-1)]"> dev</span>
       </h1>
 
       {/* Usamos Inter (por defecto) */}
