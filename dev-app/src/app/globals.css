@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colores Base */
-  --color-aramar-base-light: #F2F2F2;
-  --color-aramar-base-dark: #262626;
+  /* ===== COLORES BASE - Compartidos por TODAS las divisiones ===== */
+  --color-base-light: #F2F2F2;   /* Fondo light mode */
+  --color-base-dark: #262626;    /* Fondo dark mode */
   
-  /* Colores Corporativos */
-  --color-aramar-corp-1: #7D818C;
-  --color-aramar-corp-2: #434D59;
-  --color-aramar-corp-3: #203140;
+  /* ===== COLORES CORPORATIVOS (aramar.family) ===== */
+  --color-family-1: #7D818C;     /* Gris corporativo */
+  --color-family-2: #434D59;     /* Gris oscuro corporativo */
+  --color-family-3: #203140;     /* Gris muy oscuro corporativo */
   
-  /* Colores Dev */
-  --color-aramar-dev-1: #4E458C;
-  --color-aramar-dev-2: #494373;
-  --color-aramar-dev-3: #403C59;
+  /* ===== COLORES DEV (aramar dev) - ACENTOS ===== */
+  --color-dev-primary: #4E458C;   /* Púrpura principal */
+  --color-dev-secondary: #494373; /* Púrpura oscuro */
+  --color-dev-tertiary: #403C59;  /* Púrpura muy oscuro */
   
-  /* Colores Stats */
-  --color-aramar-stats-1: #26A682;
-  --color-aramar-stats-2: #278C70;
-  --color-aramar-stats-3: #3C735F;
+  /* ===== COLORES STATS (aramar stats) - ACENTOS ===== */
+  --color-stats-primary: #26A682;  /* Verde principal */
+  --color-stats-secondary: #278C70; /* Verde oscuro */
+  --color-stats-tertiary: #3C735F; /* Verde muy oscuro */
 
-  /* Tipografías */
+  /* ===== TIPOGRAFÍAS ===== */
   --font-sans: var(--font-inter), sans-serif;
   --font-display: "Century Gothic", sans-serif;
+}
+
+/* ===== DEFINICIONES PARA TAILWIND - Light mode por defecto ===== */
+:root {
+  color-scheme: light;
+}
+
+/* ===== Dark mode ===== */
+html.dark {
+  color-scheme: dark;
 }

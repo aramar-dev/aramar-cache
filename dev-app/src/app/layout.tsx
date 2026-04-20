@@ -27,17 +27,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    // Agregamos suppressHydrationWarning (requerido por next-themes)
-    <html lang="es" suppressHydrationWarning> 
-      {/* Quitamos los bg- y text- fijos para que Tailwind los controle */}
-      <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-white dark:bg-[var(--color-aramar-base-dark)] text-gray-900 dark:text-[var(--color-aramar-base-light)] transition-colors duration-300`}>
+    // suppressHydrationWarning requerido por next-themes
+    <html lang="es" suppressHydrationWarning>
+      {/* 
+        Light mode por defecto:
+        - bg: base-light (#F2F2F2)
+        - text: family-3 (#203140) para máximo contraste
         
+        Dark mode:
+        - bg: base-dark (#262626)
+        - text: base-light (#F2F2F2) para máximo contraste
+      */}
+      <body
+        className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-base-light dark:bg-base-dark text-family-3 dark:text-base-light transition-colors duration-300`}
+      >
         <ThemeProvider>
           <Navbar />
           <main className="flex-1 w-full">{children}</main>
           <Footer />
         </ThemeProvider>
-        
       </body>
     </html>
   );
