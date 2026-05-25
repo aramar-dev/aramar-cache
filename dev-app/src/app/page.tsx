@@ -39,7 +39,7 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="rounded-[2rem] border border-dev-secondary/10 bg-base-light/90 p-6 shadow-[var(--shadow-soft)] backdrop-blur-xl transition-all duration-300 dark:border-dev-secondary/15 dark:bg-base-dark/80 lg:p-8">
+            <aside className="rounded-[2rem] border border-dev-secondary/10 bg-base-light/90 p-6 shadow-[var(--shadow-soft)] backdrop-blur-xl transition-all duration-300 dark:border-dev-secondary/15 dark:bg-surface-card lg:p-8">
               <div className="space-y-6">
                 <div className="rounded-[1.75rem] bg-dev-primary-container/80 px-4 py-3 text-sm font-semibold text-dev-primary shadow-sm">
                   Diseño orgánico, formas expresivas
@@ -79,7 +79,7 @@ export default function Home() {
             ].map((item) => (
               <article
                 key={item.title}
-                className="group rounded-[2rem] border border-base-light/70 bg-base-light/85 p-6 shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-strong)] dark:border-base-light/10 dark:bg-base-dark/80"
+                className="group rounded-[2rem] border border-base-light/70 bg-base-light/85 p-6 shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-strong)] dark:border-base-light/10 dark:bg-surface-card"
               >
                 <div className="inline-flex items-center justify-center rounded-2xl bg-dev-primary/10 px-3 py-2 text-sm font-semibold text-dev-primary">
                   {item.title}
