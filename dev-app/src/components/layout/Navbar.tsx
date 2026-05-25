@@ -9,76 +9,52 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="w-full border-b border-family-2 bg-base-light dark:bg-base-dark sticky top-0 z-50 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        
-        {/* Lado Izquierdo: Logo corporativo */}
-        <div className="flex-shrink-0 flex items-center">
-          <Link href="/" className="flex items-center">
-            
-            {/* 1A. El Isotipo para Modo Claro */}
-            <Image 
-              src="/dev_blk.svg" 
-              alt="Icono Aramar" 
-              width={40} 
-              height={40}
-              className="w-10 h-10 object-contain block dark:hidden"
-            />
-            
-            {/* 1B. El Isotipo para Modo Oscuro */}
-            <Image 
-              src="/dev_wht.svg" 
-              alt="Icono Aramar" 
-              width={40} 
-              height={40}
-              className="w-10 h-10 object-contain hidden dark:block"
-            />
-
-            {/* 2. El Logotipo Dinámico / Experiencia de Usuario Superior */}
+    <header className="sticky top-0 z-50 w-full border-b border-dev-secondary/10 bg-base-light/95 shadow-sm backdrop-blur-xl transition-all duration-300 dark:border-dev-secondary/15 dark:bg-base-dark/90">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 rounded-full px-2 py-1 transition hover:bg-dev-primary/10 dark:hover:bg-dev-primary/15">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-surface-card shadow-[var(--shadow-soft)]">
+              <Image src="/dev_blk.svg" alt="Icono Aramar" width={40} height={40} className="block dark:hidden" />
+              <Image src="/dev_wht.svg" alt="Icono Aramar" width={40} height={40} className="hidden dark:block" />
+            </div>
             <span className="font-display text-2xl tracking-tight lowercase flex items-center h-10">
-              
-              {/* LA MAGIA: Contenedor para "aramar" con transición de expansión */}
               <span className="transition-all duration-500 ease-in-out h-full flex items-center overflow-hidden w-0 opacity-0 md:w-auto md:opacity-100 md:mr-1">
                 <strong className="text-family-3 dark:text-base-light font-bold inline-block">aramar</strong>
               </span>
-              
-              {/* "dev" -> Siempre visible y limpio */}
               <span className="text-dev-primary font-medium flex items-center h-full">dev</span>
-
             </span>
-
           </Link>
         </div>
-        
-        {/* Centro: Navegación de la División */}
-        <nav className="hidden md:flex space-x-8">
-          <Link href="#" className="text-family-2 hover:text-dev-primary dark:text-base-light dark:hover:text-dev-primary transition-colors text-sm font-medium">
-            Dashboard
-          </Link>
-          <Link href="#" className="text-family-2 hover:text-dev-primary dark:text-base-light dark:hover:text-dev-primary transition-colors text-sm font-medium">
-            Contenedores
-          </Link>
-          <Link href="#" className="text-family-2 hover:text-dev-primary dark:text-base-light dark:hover:text-dev-primary transition-colors text-sm font-medium">
-            Documentación
-          </Link>
+
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+          {[
+            { label: "Dashboard", href: "#" },
+            { label: "Contenedores", href: "#" },
+            { label: "Documentación", href: "#" },
+          ].map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="text-family-2 transition-colors duration-200 hover:text-dev-primary dark:text-base-light dark:hover:text-dev-primary"
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
-        {/* Lado Derecho: Acciones y Perfil */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-3">
           <ThemeToggle />
-          
-          <div className="hidden md:flex w-10 h-10 rounded-full bg-dev-secondary items-center justify-center text-sm font-bold shadow-md cursor-pointer hover:bg-dev-primary transition text-base-light">
+          <div className="hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-dev-secondary text-base-light shadow-md transition hover:bg-dev-primary">
             A
           </div>
-
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-md text-family-2 dark:text-base-light hover:text-dev-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-primary"
+            className="md:hidden rounded-lg p-2 text-family-2 transition hover:text-dev-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-primary focus-visible:ring-offset-2 dark:text-base-light"
             aria-expanded={isMobileMenuOpen}
             aria-label="Abrir menú principal"
             aria-controls="mobile-menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -89,28 +65,27 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menú Móvil */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-base-light dark:bg-base-dark border-b border-family-2 transition-colors duration-300">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link href="#" className="block px-3 py-2 rounded-md text-base font-medium text-family-2 dark:text-base-light hover:bg-family-2 hover:bg-opacity-10 dark:hover:bg-dev-tertiary hover:text-dev-primary transition-colors">
-              Dashboard
-            </Link>
-            <Link href="#" className="block px-3 py-2 rounded-md text-base font-medium text-family-2 dark:text-base-light hover:bg-family-2 hover:bg-opacity-10 dark:hover:bg-dev-tertiary hover:text-dev-primary transition-colors">
-              Contenedores
-            </Link>
-            <Link href="#" className="block px-3 py-2 rounded-md text-base font-medium text-family-2 dark:text-base-light hover:bg-family-2 hover:bg-opacity-10 dark:hover:bg-dev-tertiary hover:text-dev-primary transition-colors">
-              Documentación
-            </Link>
+        <div id="mobile-menu" className="md:hidden border-t border-dev-secondary/10 bg-base-light/95 px-4 pb-4 pt-3 backdrop-blur-xl transition duration-300 dark:border-dev-secondary/15 dark:bg-base-dark/90">
+          <div className="space-y-1">
+            {[
+              { label: "Dashboard", href: "#" },
+              { label: "Contenedores", href: "#" },
+              { label: "Documentación", href: "#" },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="block rounded-2xl px-3 py-2 text-base font-medium text-family-2 transition hover:bg-dev-primary/10 hover:text-dev-primary dark:text-base-light dark:hover:bg-dev-primary/15"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
-          <div className="pt-4 pb-3 border-t border-family-2">
-            <div className="flex items-center px-5 gap-3">
-              <div className="w-10 h-10 rounded-full bg-dev-secondary flex items-center justify-center text-sm font-bold shadow-md text-base-light">
-                A
-              </div>
-              <div className="text-base font-medium text-family-3 dark:text-base-light">
-                Perfil del Ingeniero
-              </div>
+          <div className="mt-4 border-t border-dev-secondary/10 pt-4 dark:border-dev-secondary/15">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-dev-secondary text-base-light shadow-md">A</div>
+              <div className="text-base font-medium text-family-3 dark:text-base-light">Perfil del Ingeniero</div>
             </div>
           </div>
         </div>
