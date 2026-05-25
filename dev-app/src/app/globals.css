@@ -45,10 +45,14 @@
 html.dark {
   color-scheme: dark;
 
-  --surface-card: #2B2833;
-  --surface-card-soft: rgba(46, 44, 55, 0.82);
-  --surface-tint: rgba(78, 69, 140, 0.22);
-  --surface-divider: rgba(255, 255, 255, 0.08);
+  --color-base-dark: #0F0C17;
+  --color-family-2: #BFC4D1;
+  --color-family-3: #E6E9F4;
+
+  --surface-card: #16131F;
+  --surface-card-soft: rgba(18, 15, 27, 0.94);
+  --surface-tint: rgba(78, 69, 140, 0.28);
+  --surface-divider: rgba(255, 255, 255, 0.12);
 }
 
 @layer base {
