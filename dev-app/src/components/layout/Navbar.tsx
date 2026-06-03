@@ -11,17 +11,17 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-dev-secondary/10 bg-base-light/95 shadow-sm backdrop-blur-xl transition-all duration-300 dark:border-dev-secondary/15 dark:bg-base-dark/90">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-3 rounded-full px-2 py-1 transition hover:bg-dev-primary/10 dark:hover:bg-dev-primary/15">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-surface-card shadow-[var(--shadow-soft)]">
-              <Image src="/dev_blk.svg" alt="Icono Aramar" width={40} height={40} className="block dark:hidden" />
-              <Image src="/dev_wht.svg" alt="Icono Aramar" width={40} height={40} className="hidden dark:block" />
+        <div className="flex items-center">
+          <Link href="/" className="group flex items-center gap-2.5 rounded-full px-1.5 py-1.5 transition-all hover:bg-dev-primary/8 dark:hover:bg-dev-primary/12">
+            <div className="relative flex h-11 w-11 items-center justify-center rounded-[1.375rem] bg-surface-card shadow-[0_4px_16px_rgba(78,69,140,0.12)] transition-all group-hover:shadow-[0_6px_24px_rgba(78,69,140,0.16)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.3)]">
+              <Image src="/dev_blk.svg" alt="Icono Aramar" width={44} height={44} className="h-10 w-10 block dark:hidden" />
+              <Image src="/dev_wht.svg" alt="Icono Aramar" width={44} height={44} className="h-10 w-10 hidden dark:block" />
             </div>
-            <span className="font-display text-2xl tracking-tight lowercase flex items-center h-10">
-              <span className="transition-all duration-500 ease-in-out h-full flex items-center overflow-hidden w-0 opacity-0 md:w-auto md:opacity-100 md:mr-1">
+            <span className="font-display text-[1.625rem] font-medium tracking-tight lowercase flex items-center h-11 whitespace-nowrap">
+              <span className="transition-all duration-500 ease-in-out h-full flex items-center overflow-hidden w-0 opacity-0 md:w-auto md:opacity-100 md:mr-0.5">
                 <strong className="text-family-3 dark:text-base-light font-bold inline-block">aramar</strong>
               </span>
-              <span className="text-dev-primary font-medium flex items-center h-full">dev</span>
+              <span className="text-dev-primary font-semibold flex items-center h-full">dev</span>
             </span>
           </Link>
         </div>
