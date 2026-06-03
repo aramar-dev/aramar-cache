@@ -3,14 +3,14 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="relative overflow-hidden min-h-screen bg-base-light dark:bg-base-dark transition-colors duration-300">
-      <section className="relative isolate px-4 py-14 sm:px-6 lg:px-8">
+      <section className="relative isolate px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="pointer-events-none absolute -top-16 left-1/2 -z-10 h-64 w-64 -translate-x-1/2 rounded-full bg-dev-primary/20 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 right-0 -z-10 h-72 w-72 rounded-full bg-dev-secondary/15 blur-3xl" />
 
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
             <div className="space-y-8">
-              <span className="inline-flex items-center rounded-full border border-dev-primary/20 bg-dev-primary-container/70 px-4 py-1 text-sm font-medium text-dev-primary shadow-sm">
+              <span className="inline-flex items-center rounded-full border border-dev-primary/30 bg-dev-primary-container/50 px-5 py-1.5 text-xs font-bold text-dev-primary shadow-[0_4px_12px_rgba(232,224,255,0.25)] uppercase tracking-[0.08em]">
                 MD3 Expressive · Adaptivo · Pulido
               </span>
 

@@ -44,7 +44,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <div className="hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-dev-secondary text-base-light shadow-md transition hover:bg-dev-primary">
+          <div className="hidden md:flex h-11 w-11 items-center justify-center rounded-full bg-dev-secondary text-base-light shadow-[0_4px_12px_rgba(78,69,140,0.18)] transition-all hover:shadow-[0_6px_20px_rgba(78,69,140,0.24)] hover:bg-dev-primary font-semibold text-sm">
             A
           </div>
           <button
@@ -84,7 +84,7 @@ export default function Navbar() {
           </div>
           <div className="mt-4 border-t border-dev-secondary/10 pt-4 dark:border-dev-secondary/15">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-dev-secondary text-base-light shadow-md">A</div>
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-dev-secondary text-base-light shadow-[0_4px_12px_rgba(78,69,140,0.18)] font-semibold text-sm">A</div>
               <div className="text-base font-medium text-family-3 dark:text-base-light">Perfil del Ingeniero</div>
             </div>
           </div>
